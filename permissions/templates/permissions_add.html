@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Adicionar Perfil{% endblock %}
+
+
+{% block content %}
+
+<div class="main-content">
+	<div class="header">
+		<h1>Adicionar Permissões</h1>
+		<div class="header-buttons">
+			<a href="/permissions">
+				<button class="add-ticket">voltar</button>
+			</a>	
+
+		</div>
+	</div>
+
+<main class="zone-table-form">
+
+  <form action="" method="post" class="Formulario">
+    <main>
+     {% csrf_token %}
+      {{ form }}
+      <input type="submit" value="Submit">
+    </main>
+     
+  </form>
+
+</main>
+</div>
+
+{% endblock %}

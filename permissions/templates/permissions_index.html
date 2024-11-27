@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}Permissões{% endblock %}
+
+{% block content %}
+
+<div class="main-content">
+	<div class="header">
+		<h1>Permissões</h1>
+		<div class="header-buttons">
+			<a href="{% url 'permissions_add' %}">
+				<button class="add-ticket">+ Adicionar Permissões</button>
+			</a>	
+		</div>
+	</div>
+
+	<div class="filters">
+			<div class="filter-item">
+				<input type="text" placeholder="&#128269; Search">
+			</div>
+		</div>
+		
+<main class="zone-table">
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>opções</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			{% for permissions in permissions %}
+			<tr>
+				<td>
+					<a href="/roles/{{ permissions.id }}">
+							{{ permissions.id }}
+					</a>
+				</td>
+			
+				<td>{{ permissions.name }}</td>
+				<td>
+					<a href="{% url 'permissions_rem' permissions.id %}" class="focus-mode-button">deletar</a>
+					<a href="{% url 'permissions_update' permissions.id %}" class="focus-mode-button">editar</a>
+				</td>
+			</tr>
+
+
+		{% endfor %}
+
+			
+
+		
+		</tbody>
+	</table>
+
+</main>
+</div>
+
+
+{% endblock %}
