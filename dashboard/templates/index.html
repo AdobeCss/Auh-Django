@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}Pagina Inicial{% endblock %}
+<main class="conteiner-conteudo">
+	
+{% block content %}
+
+<div class="main-content">
+	<div class="header">
+		<h1>APC COntrol</h1>
+		<div class="header-buttons">
+			<button class="focus-mode">Focus Mode</button>
+			<button class="add-ticket">Add Ticket</button>
+		</div>
+	</div>
+	<div class="filters">
+		<div class="filter-item">
+			<input type="text" placeholder="&#128269; Search">
+		</div>
+		<div class="filter-item">
+			<select>
+				<option>Type</option>
+			</select>
+		</div>
+		<div class="filter-item">
+			<select>
+				<option>Source</option>
+			</select>
+		</div>
+		<div class="filter-item">
+			<select>
+				<option>Priority</option>
+			</select>
+		</div>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Ticket ID</th>
+				<th>Subject</th>
+				<th>Priority</th>
+				<th>Type</th>
+				<th>Client</th>
+				<th>Request Date</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>#TC-192</td>
+				<td>Help, I order wrong product...</td>
+				<td><span class="priority high">High</span></td>
+				<td>Incident</td>
+				<td>
+					<div class="client">
+						<div class="client-avatar">SC</div>
+						Santi Carloza
+					</div>
+				</td>
+				<td>09/11/2023, 11:34PM</td>
+				<td class="actions">&#8942;</td>
+			</tr>
+			<tr>
+				<td>#TC-191</td>
+				<td>My Suggestion for this product</td>
+				<td><span class="priority low">Low</span></td>
+				<td>Suggestion</td>
+				<td>
+					<div class="client">
+						<div class="client-avatar">FR</div>
+						Fast Response
+					</div>
+				</td>
+				<td>09/11/2023, 04:03PM</td>
+				<td class="actions">&#8942;</td>
+			</tr>
+			<tr>
+				<td>#TC-190</td>
+				<td>Can i use the TV in bathroom?</td>
+				<td><span class="priority medium">Medium</span></td>
+				<td>Question</td>
+				<td>
+					<div class="client">
+						<div class="client-avatar">AM</div>
+						Arlene McCoy
+					</div>
+				</td>
+				<td>07/11/2023, 11:16PM</td>
+				<td class="actions">&#8942;</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+{% endblock %}
+
+</main>
