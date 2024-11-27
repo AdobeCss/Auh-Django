@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Usuarios{% endblock %}
+
+{% block content %}
+
+
+
+<div class="main-content">
+	<div class="header">
+		<h1>Usuarios</h1>
+		<div class="header-buttons">
+			<a href="{% url 'user_add' %}">
+				<button class="add-ticket">+ Adicionar utilizadores</button>
+			</a>	
+
+		</div>
+	</div>
+
+	<div class="filters">
+			<div class="filter-item">
+				<input type="text" placeholder="&#128269; Search">
+			</div>
+		</div>
+		
+<main class="zone-table">
+
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>email</th>
+				<th>opções</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for user_ in users %}
+			{% if user_.id != user.id %}
+			  <tr>
+				<td>{{ user_.id }}</td>
+				<td>{{ user_.username }}</td>
+				<td>{{ user_.email }}</td>
+				<td>
+				  <a class="focus-mode-button" href="{% url 'user_rem' user_.id %}">deletar</a>
+				  <a class="focus-mode-button">editar</a>
+				</td>
+			  </tr>
+			{% endif %}
+		  {% endfor %}
+		</tbody>
+	</table>
+
+</main>
+</div>
+
+
+{% endblock %}
+
+
+
+
