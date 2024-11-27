@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Permissões{% endblock %}
+
+{% block content %}
+
+<div class="main-content">
+	<div class="header">
+		<h1>Roles</h1>
+	</div>
+
+	<div class="filters">
+		<div class="filter-item">
+			<input type="text" placeholder="&#128269; Search">
+		</div>
+	</div>
+
+	<main class="zone-table">
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th>opções</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for role_ in role %}
+				<tr>
+					<td>{{ role_.id }}</td>
+					<td>{{ role_.name }}</td>
+					<td>
+						<form method="post" >
+							{% csrf_token %}
+							<input type="hidden" name="role_id" value="{{role_.id}}" />
+							<input type="submit" style="background: {% if role_ in group_permissions %} green {% else %} red {% endif %}"  value=""/>
+						</form>
+					</td>
+					{% endfor %}
+			</tbody>
+		</table>
+
+	</main>
+</div>
+
+
+{% endblock %}
